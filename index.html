@@ -1,40 +1,40 @@
-
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
- <head>
-        <meta charset="UTF-8">
-        <title>My Font</title> 
-        <style>
-        
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Font</title>
+    <style>
         * {
             box-sizing: border-box;
         }
-             @font-face {
-               font-family: "MyFont";
-               src: url("fonts/Myfont-Regular.ttf");
+
+        @font-face {
+            font-family: "MyFont";
+            src: url("fonts/Myfont-Regular.ttf");
         }
 
-            body {
+        body {
             margin: 0;
             font-family: "MyFont";
         }
 
         section {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 40px;
         }
 
-         h1 {
+        h1 {
             font-size: 3.6rem;
             margin-top: 2rem;
             text-align: center;
         }
 
-         p {
+        p {
             font-size: 2.4rem;
             line-height: 1.1;
             max-width: 280px;
@@ -49,9 +49,9 @@
             border-bottom: 4px dashed red;
             position: relative;
         }
-        
+
         .scene-label {
-            position:absolute;
+            position: absolute;
             top: 20px;
             right: 20px;
             font-size: 1.2rem;
@@ -66,36 +66,43 @@
             margin-top: -13rem;
             max-width: 400px;
         }
-        
-        body{
+
+        body {
             font-family: "MyFont";
             background-color: rgb(153, 231, 255);
-         }   
-
-        </style>
+        }
+    </style>
 </head>
+
 <body>
 
     <section class="scene">
-    <div class="scene-label">Scene 1</div>
-    <h1>Bird and Himself</h1>
-    <p>Bird was once sitting by his lonsome one day wondering to himself outside the window. <br> <strong>Was he missing something?</strong></p>
+        <div class="scene-label">Scene 1</div>
+        <h1>Bird and Himself</h1>
+        <p>Bird was once sitting by his lonsome one day wondering to himself outside the window. <br> <strong>Was he
+                missing something?</strong></p>
     </section>
 
     <section class="scene">
-    <div class="scene-label">Scene 2</div>
-    <h1>Runners</h1>
-    <p>Bird thought to himself, looking out at the beach</p>
-    <p class="right-text"><strong>"Could I be like them?<br> lots of freinds?"</strong></p>
+        <div class="scene-label">Scene 2</div>
+        <h1>Runners</h1>
+        <p>Bird thought to himself, looking out at the beach</p>
+        <p class="right-text"><strong>"Could I be like them?<br> lots of freinds?"</strong></p>
     </section>
 
     <section class="scene">
-    <div class="scene-label">Scene 3</div>
-    <h1>Improving</h1>
-    <p>Bir
+        <div class="scene-label">Scene 3</div>
+        <h1>Improving</h1>
+        <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
+        <p class="right-text"><strong>"I'll be popular like them"<br>"Happy"</strong></p>
     </section>
 
+    <section class="scene"> 
+        <div class="scene-label">Scene 4</div>
+        <h1>Roadblock</h1>
+        <p>And so bird went on a jounry of varyign degrees of succses</p>
+        <p class="right-text"><strong>"I will be happy"</strong></p>
+    </section>
 </body>
 
 </html>
-
