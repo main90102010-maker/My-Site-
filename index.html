@@ -17,7 +17,7 @@
         body {
             margin: 0;
             font-family: "MyFont";
-            background-color: rgb(153, 231, 255);
+            background-color: #99e7ff;
         }
 
         section {
@@ -26,37 +26,74 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            padding: 40px;
+            padding-top: 15vh;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 40px;
         }
 
         h1 {
-            font-size: 3.6rem;
+            font-size: clamp(2rem, 3vw, 4rem);
             margin-top: 2rem;
             text-align: center;
         }
 
         p {
-            font-size: 2.4rem;
+            font-size: clamp(1.5rem, 2vw, 3rem);
             line-height: 1.1;
             max-width: 280px;
             text-align: left;
-            margin-top: 6rem;
+            margin-bottom: 10vh;
             align-self: flex-start;
             margin-left: 15%;
             padding: 20px;
         }
 
+        html {
+            scroll-snap-type: y proximity;
+        }
+
         .scene {
             border-bottom: 4px dashed red;
             position: relative;
+            scroll-snap-align: start;
         }
 
-        .scene-label {
+        .scene.visible {
+            opacity: 1;
+        }
+        
+        .scene::after {
+            content: "";
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.2rem;
-            color: red;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--fade-color, #99e7ff);
+            opacity: 1;
+            transition: opacity 1s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .scene.visible::after {
+            opacity: 0;
+        }
+        
+        .scene-content {
+            opacity: 0;
+            transition: opacity 1.2s ease;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .scene.visible .scene-content {
+            opacity: 1;
         }
 
         .right-text {
@@ -68,59 +105,367 @@
             max-width: 400px;
         }
 
+        .paired {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width:100%;
+            margin-top: 10vh;
+            align-items: flex-start;
+        }
+
+        .intro {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(to bottom,
+                #6db8e8 0%,
+                #99e7ff 55%,
+                #b8f0ff 75%,
+                #f2e3b3 75%,
+                #e8d5a3 100%);
+        }
+
+        .backwardgrad {
+            background: linear-gradient(to bottom, #e0f6ff 0%, #99e7ff 100%);
+            height: 50vh;
+            width: 100%;
+        }
+
+        .sun {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 100px;
+            height: 100px;
+            background-color: #FFD93B;
+            border-radius: 50%;
+        }
+
+        .eplog {
+            padding: 0;
+        }
+
+        .eplog .scene-content {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .eplog-left {
+            position: absolute;
+            bottom: 9%;
+            left: 10%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .eplog p {
+            align-self: flex-start;
+            margin-left: 0;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        
+        .fin-title {
+            position: static;
+            margin-top: 0;
+            text-align: left;
+        }
+
+        .campframe {
+            width: 100%;
+            height: 13vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px dashed #ffffff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .polframe {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44%;
+            height: 65vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px dashed #ffffff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .campframe span,
+        .polframe span {
+            font-size: clamp(1.5rem, 2vw, 3rem);
+            color: #555;
+        }
+
+        .finbeach {
+            background: linear-gradient(to bottom, 
+                #12121a 0%,
+                #1a2340 30%,
+                #0f1b3d 85%,
+                #6a6f85 85%,
+                #545a70 100%);
+        }  
+        
+        .mun {
+            position: absolute;
+            top: 12%;
+            left: 15%;
+            width: 90px;
+            height: 90px;
+            background-color: #F5f3ce;
+            border-radius: 50%;
+            box-shadow: 0 0 40px 15px rgba(245, 243, 206, 0.4);
+        }
+
+        .darkroom {
+            background: linear-gradient(to bottom,
+                #2a2a35 0%,
+                #1c1c26 60%,
+                #12121a 100%);
+        }
+
+        .door {
+            position: absolute;
+            bottom: 0;
+            right: 18%;
+            width: 14vw;
+            height: 70vh;
+            background: linear-gradient(to bottom, #fffbe8 0%, #fff3c4 100%);
+            border-radius: 6px 6px 0 0;
+            box-shadow: 0 0 80px 30px rgba(255, 248, 220, 0.35);
+        }
+
+        .apartment {
+            background: linear-gradient(to bottom,
+                #c9c4b8 0%,
+                #b5ae9f 60%,
+                #8f887a 100%);
+        }
+
     </style>
 </head>
 
 <body>
 
-    <section class="scene">
+    <section class="intro scene visible">
+        <div class="sun"></div>
+        <div class="scene-content">
+            <h1>Birds Story</h1>
+            <p>Short bird story - Kevin </p>
+        </div>
+    </section>
+<section class="scene apartment">
         <div class="scene-label">Scene 1</div>
-        <h1>Bird and Himself</h1>
-        <p>Bird was once sitting by his lonsome one day, wondering to himself. <br> <strong>Was he
-                missing something?</strong></p>
+        <div class="scene-content">
+            <h1>Bird and Himself</h1>
+            <p>Bird was once sitting by his lonsome one day, wondering to himself. <br> <strong>Was he missing something?</strong></p>
+        </div>
     </section>
 
     <section class="scene">
         <div class="scene-label">Scene 2</div>
-        <h1>Runners</h1>
-        <p>Bird thought to himself, looking out at the beach</p>
-        <p class="right-text"><strong>"Could I be like them?<br> lots of freinds?"</strong></p>
+        <div class="scene-content">
+            <h1>Runners</h1>
+        <div class="paired">
+            <p>Bird thought to himself, looking out at the beach</p>
+            <p class="right-text"><strong>"Could I be like them?<br> lots of freinds?"</strong></p>
+        </div>
+        </div>
     </section>
 
     <section class="scene">
         <div class="scene-label">Scene 3</div>
-        <h1>Improving</h1>
+        <div class="scene-content">
+            <h1>Improving</h1>
+        <div class="paired">
         <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
         <p class="right-text"><strong>"I'll be popular like them"<br> <br>"Happy"</strong></p>
+        </div>
+        </div>
     </section>
 
     <section class="scene"> 
         <div class="scene-label">Scene 4</div>
-        <h1>Roadblock</h1>
-        <p>And so bird went on a jounry of varyign degrees of succses</p>
-        <p class="right-text"><strong>"I'll be happy!"</strong></p>
+        <div class="scene-content">
+            <h1>Roadblock</h1>
+        <div class="paired">
+            <p>And so bird went on a jounry of varyign degrees of succses</p>
+            <p class="right-text"><strong>"I'll be happy!"</strong></p>
+        </div>
+        </div>
     </section>
 
     <section class="scene">
         <div class="scene-label">Scene 5</div>
-        <h1>Run</h1>
-        <p>So every day before school, bird ran<br><strong>"gosh this is hard"</strong></p>
-        <p class="right-text"><strong>"I wish I was home playing league"</strong></p>
+        <div class="scene-content">
+            <h1>Run</h1>
+            <div class="paired">
+                <p>Bird ran every morning, and at first.<br><br>It wasn't easy</p>
+                <p class="right-text"><strong>"gosh this is hard"</strong></p>
+            </div>
+        </div>
     </section>
 
     <section class="scene">
         <div class="scene-label">Scene 6</div>
-        <h1>New Friends</h1>
-        <p>Bird met Parot, he also ran on the beach every morning<br><strong><em>Should I say Hi?</em></strong></p>
-        <p class="right-text"><strong><span style="color: red;">"Hey, I see you run every morning"<br>"What's your name?"</span></strong></p>
+        <div class="scene-content">
+                <h1>New Friend</h1>
+            <div class="paired">
+                <p>Bird met Parot, he also ran on the beach every morning<br><strong><em>Should I say Hi?</em></strong></p>
+                <p class="right-text"><strong><span style="color: #ff6565;"><br>"Hey, I see you run every morning"<br>"What's your name?"</span></strong></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="scene">
+        <div class="scene-label">Scene 7</div>
+        <div class="scene-content">
+                <h1>Morning</h1>
+            <div class="paired">
+                <p><em>Man I really do not want to get up</em><br><strong><em>But I Cant leave him hanging</em></strong></p>
+                <p class="right-text"><strong><span style="color: #000000;"><br>"No! I have to get up."<br></span></strong></p>
+            </div>
+        </div>
     </section>
 
+    <section class="scene">
+        <div class="scene-label">Scene 8</div>
+        <div class="scene-content">
+                 <h1>Thunder</h1>
+            <div class="paired">
+                <p>It started to storm, and Bird had to stay inside</p>
+                <p class="right-text"><strong><span style="color: #000000;"><br>"Bruh."</span></strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="scene">
+        <div class="scene-label">Scene 9</div>
+        <div class="scene-content">
+                <h1>Day</h1>
+            <div class="paired">
+                <p>Bird still had class and bills to pay so he had to go out anyway</p>
+                <p class="right-text"><strong><em>Could it be anymore windy"</em></strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="scene">
+        <div class="scene-label">Scene 10</div>
+        <div class="scene-content">
+            <h1>New Look</h1>
+            <div class="paired">
+                <p>Bird had been trying new things lately.<br>New colors. New styles.<br>Things that felt more like <em>them</em>.</p>
+                <p class="right-text"><strong><em>"That looks nice."</em></strong></p>
+            </div>
+        </div>
+    </section>
 
+    <section class="scene">
+        <div class="scene-label">Scene A</div>
+        <div class="scene-content">
+                <h1>There</h1>
+            <div class="paired">
+                <p>Bird finally looked the part. She'd made it.<br>She waited to feel different.</p>
+                <p class="right-text"><strong><em>...huh.</em></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scene">
+        <div class="scene-label">Scene B</div>
+        <div class="scene-content">
+                <h1>Morning Run</h1>
+            <div class="paired">
+                <p>The next morning, Parot was waiting at the usual spot.<br>They ran. Nothing special.</p>
+                <p class="right-text"><strong>It was the best she'd felt all week.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scene">
+        <div class="scene-label">Scene 11</div>
+            <div class="scene-content">
+                <h1>Party</h1>
+            <div class="paired">
+                <p>Parot invited Bird to a party<br><strong>"I dont know I dont really do parties."</strong></p>
+                <p class="right-text"><strong><span style="color: #ff6565;"><br>"My freinds hear about you all the time."<br>"they have been dying to meet you."</span></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scene">
+        <div class="scene-label">Scene 12</div>
+            <div class="scene-content">
+                <h1>More Friends</h1>
+            <div class="paired">
+                <p>Bird's got some new freinds, it was nice.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="scene">
+        <div class="scene-label">Scene 13</div>
+            <div class="scene-content">
+                <div class="door"></div>
+                <h1>Bird and freinds</h1>
+                <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
+                <p class="right-text"><strong><span style="color: #000000;">She found her own happiness</span></strong></p>
+            </div>
+    </section>
+
+    <section class="scene eplog finbeach">
+        <div class="scene-content">
+            <div class="mun"></div>
+            <div class="eplog-left">
+                <h1 class="fin-title">〜EL FIN〜</h1>
+                <p>Thanks for scrolling.<br><strong>— Kevin</strong></p>
+                <div class="campframe">
+                    <span>[ campfire ]</span>
+                </div>
+            </div>
+            <div class="polframe">
+                <span>[ polaroids ]</span>
+            </div>
+        </div>
+    </section>
     
-    
-    
-    
-    
+    <script>
+        const scenes = document.querySelectorAll('.scene');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else { 
+                    entry.target.classList.remove('visible')
+                }
+            });
+        }, {
+             threshold: 0.1 
+        });
+
+        scenes.forEach(scene => {
+            observer.observe(scene);
+        });
+
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
 </body>
-
 </html>
