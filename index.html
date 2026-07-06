@@ -50,7 +50,7 @@
         }
 
         html {
-            scroll-snap-type: y proximity;
+            scroll-snap-type: y mandatory;
         }
 
         .scene {
@@ -83,7 +83,7 @@
         
         .scene-content {
             opacity: 0;
-            transition: opacity 1.2s ease;
+            transition: opacity .5ms ease;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -114,7 +114,7 @@
             align-items: flex-start;
         }
 
-        .intro {
+        .day {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -127,12 +127,6 @@
                 #b8f0ff 75%,
                 #f2e3b3 75%,
                 #e8d5a3 100%);
-        }
-
-        .backwardgrad {
-            background: linear-gradient(to bottom, #e0f6ff 0%, #99e7ff 100%);
-            height: 50vh;
-            width: 100%;
         }
 
         .sun {
@@ -182,7 +176,7 @@
             width: 100%;
             height: 13vh;
             background-color: rgba(0, 0, 0, 0.5);
-            border: 3px dashed #ffffff;
+            border: 0px solid #ffffff;
             border-radius: 12px;
             display: flex;
             justify-content: center;
@@ -197,7 +191,7 @@
             width: 44%;
             height: 65vh;
             background-color: rgba(0, 0, 0, 0.5);
-            border: 3px dashed #ffffff;
+            border: 0px solid #ffffff;
             border-radius: 12px;
             display: flex;
             justify-content: center;
@@ -255,12 +249,21 @@
                 #8f887a 100%);
         }
 
+        .storm {
+            background: linear-gradient(to bottom,
+                #0e0e2c 0%,
+                #1e1e39 60%,
+                #474769 100%);
+        }
+
+
+
     </style>
 </head>
 
 <body>
 
-    <section class="intro scene visible">
+    <section class="day scene visible">
         <div class="sun"></div>
         <div class="scene-content">
             <h1>Birds Story</h1>
@@ -302,7 +305,7 @@
         <div class="scene-content">
             <h1>Roadblock</h1>
         <div class="paired">
-            <p>And so bird went on a jounry of varyign degrees of succses</p>
+            <p>And so bird went on a journey of varying degrees of success</p>
             <p class="right-text"><strong>"I'll be happy!"</strong></p>
         </div>
         </div>
@@ -342,24 +345,24 @@
         </div>
     </section>
 
-    <section class="scene">
+    <section class="scene storm">
         <div class="scene-label">Scene 8</div>
         <div class="scene-content">
-                 <h1>Thunder</h1>
+                 <h1><span style="color: #ffffff;">Thunder</span></h1>
             <div class="paired">
-                <p>It started to storm, and Bird had to stay inside</p>
-                <p class="right-text"><strong><span style="color: #000000;"><br>"Bruh."</span></strong></p>
+                <p><span style="color: #ffffff;">It started to storm, and Bird had to stay inside</span></p>
+                <p class="right-text"><strong><span style="color: #ffffff;"><br>"Bruh."</span></strong></p>
             </div>
         </div>
     </section>
     
-    <section class="scene">
-        <div class="scene-label">Scene 9</div>
+    <section class="scene storm">
+        <div class="scene-label">Scene 8a</div>
         <div class="scene-content">
-                <h1>Day</h1>
+                </span><h1><span style="color: #ffffff;">Storm</span></h1>
             <div class="paired">
-                <p>Bird still had class and bills to pay so he had to go out anyway</p>
-                <p class="right-text"><strong><em>Could it be anymore windy"</em></strong></p>
+                <p><span style="color: #ffffff;">Bird still had class and bills to pay so he had to go out anyway</span></p>
+                <p class="right-text"><strong><em><span style="color: #ffffff;">"Could it be anymore windy"</span></em></strong></p>
             </div>
         </div>
     </section>
@@ -381,7 +384,7 @@
                 <h1>There</h1>
             <div class="paired">
                 <p>Bird finally looked the part. She'd made it.<br>She waited to feel different.</p>
-                <p class="right-text"><strong><em>...huh.</em></strong></p>
+                <p class="right-text"><strong><em>...huh</em></strong></p>
             </div>
         </div>
     </section>
@@ -421,8 +424,8 @@
     <section class="scene">
         <div class="scene-label">Scene 13</div>
             <div class="scene-content">
-                <div class="door"></div>
-                <h1>Bird and freinds</h1>
+                
+                <h1>Bird and friends</h1>
                 <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
                 <p class="right-text"><strong><span style="color: #000000;">She found her own happiness</span></strong></p>
             </div>
@@ -435,11 +438,11 @@
                 <h1 class="fin-title">〜EL FIN〜</h1>
                 <p>Thanks for scrolling.<br><strong>— Kevin</strong></p>
                 <div class="campframe">
-                    <span>[ campfire ]</span>
+                    <span> campfire </span>
                 </div>
             </div>
             <div class="polframe">
-                <span>[ polaroids ]</span>
+                <span> polaroids </span>
             </div>
         </div>
     </section>
