@@ -57,6 +57,7 @@
             border-bottom: 4px dashed red;
             position: relative;
             scroll-snap-align: start;
+            overflow: hidden;
         }
 
         .scene.visible {
@@ -170,9 +171,15 @@
             top: 30%;
             right: 60%;
             width: 50vw;
-            height: 63vw;
+            height: 100vw;   /* ← the only knob now. was 63vw */
             background-color: #8b6f52;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(
+            50% 0,
+            100% 15.75vw,
+            100% calc(100% - 15.75vw),
+            50% 100%,
+            0 calc(100% - 15.75vw),
+            0 15.75vw);
         }
 
         .isoroof2 {
@@ -195,14 +202,18 @@
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
 
-        .isoline {
-            position: absolute;
-            left: 50%;
-            width: 160vw;
-            height: 12px;
-            transform: translate(-50%, -50%) rotate(30deg);
-            pointer-events: none;
-        }
+        .iso-stack {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: -30%; right: -30%;
+    transform: rotate(10deg);
+    pointer-events: none;
+    }
+
+    .iso-band {
+    position: absolute;
+    left: 0; right: 0;
+    }
         
          .day2 {
             min-height: 100vh;
@@ -241,6 +252,14 @@
             padding: 0;
         }
 
+        .stormy {
+            background: linear-gradient(to bottom,
+                #4a5568 0%,
+                #556070 60%,
+                #5d6878 100%);
+        }
+
+
         .eplog .scene-content {
             min-height: 100vh;
             position: relative;
@@ -269,8 +288,19 @@
             margin-top: 0;
             text-align: left;
         }
-        
-        .water {
+
+        .campframe {
+            width: 100%;
+            height: 13vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 3px dashed #ffffff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .polframe {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -436,20 +466,24 @@
             </div>
             <div class="scene-label">Scene 1</div>
             <h1>Bird and Himself</h1>
-            <p style="margin-left: 70%; margin-bottom: 20%;">Bird was once sitting by his lonsome one day, wondering to himself. <br> <strong>Was he missing something?</strong></p>
+            <p style="margin-left: 70%; margin-bottom: 20%;">Bird was once sitting by his lonsome one day, wondering to himself. 
+                           <br> <strong>Was he missing something?</strong></p>
         </div>
     </section>
 
     <section class="scene">
+        <div class="iso-stack">
+        <div class="iso-band" style="top:-30%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
+        <div class="iso-band" style="top:15%; height:40%; background-color: #e8d5ae;"></div>
+        <div class="iso-band" style="top:55%; height:10%; background-color: rgba(90, 80, 60, 0.6);"></div>
+        <div class="iso-band" style="top:65%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
+        <div class="iso-band" style="top:90%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
+        </div>
         <div class="scene-label">Scene 2</div>
-        <div class="scene-content">
-            <div class="isoline" style="top: 45%; background-color: rgba(61, 155, 196, 0.7);"></div>
-            <div class="isoline" style="top: 60%; background-color: rgba(160, 150, 130, 0.7);"></div>
-            <div class="isoline" style="top: 75%; background-color: rgba(90, 80, 60, 0.6);"></div>
-            <div class="isocube"></div>
-            <div class="isoroof2"></div>
-            <div class="isoroof"></div>
-            
+        <div class="scene-content">   
+        <div class="isocube"></div>
+        <div class="isoroof2"></div>
+        <div class="isoroof"></div>
             <h1>Runners</h1>
             <div class="paired">
                 <p>Bird thought to himself, looking out at the beach</p>
@@ -464,7 +498,7 @@
             <h1>Improving</h1>
         <div class="paired">
         <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
-        <p class="right-text"><strong>"I'll be popular like them"<br> <br>"Happy"</strong></p>
+        <p class="right-text"><strong>"I'll be popular like them"<br>"Happy"</strong></p>
         </div>
         </div>
     </section>
@@ -607,7 +641,7 @@
                 <h1 class="fin-title">〜EL FIN〜</h1>
                 <p>Thanks for scrolling.<br><strong>— Kevin</strong></p>
                 <div class="campframe">
-                    <span> campfire </span>
+                    <span>[ campfire ]</span>
                 </div>
             </div>
             <div class="polframe">
@@ -616,6 +650,7 @@
         </div>
     </section>
     
+
     <script>
         const scenes = document.querySelectorAll('.scene');
 
