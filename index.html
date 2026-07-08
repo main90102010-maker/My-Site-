@@ -122,22 +122,22 @@
             z-index: 10;
         }
 
-        .roof {
-            position: absolute;
-            bottom: 75%;
-            left: -15%;
-            width: 60vw;
-            height: 9vh;
-            background-color: #6e6e6e;
-        }
-
         .building {
             position: absolute;
-            top: 20%;
+            bottom: 0;
             left: -10%;
             width: 50vw;
             height: 70vh;
             background-color: #8b6f52;
+        }
+
+        .roof {
+            position: absolute;
+            bottom: 70vh;
+            left: -15%;
+            width: 60vw;
+            height: 9vh;
+            background-color: #6e6e6e;
         }
 
         .bird-window {
@@ -171,7 +171,7 @@
             top: 30%;
             right: 60%;
             width: 50vw;
-            height: 80vw;   /* ← the only knob now. was 63vw */
+            height: 100vw;   /* ← the only knob now. was 63vw */
             background-color: #8b6f52;
             clip-path: polygon(
             50% 0,
@@ -179,8 +179,8 @@
             100% calc(100% - 15.75vw),
             50% 100%,
             0 calc(100% - 15.75vw),
-            0 15.75vw, );
-            }
+            0 15.75vw);
+        }
 
         .isoroof2 {
             position: absolute;
@@ -203,18 +203,21 @@
         }
 
         .iso-stack {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: -30%; right: -30%;
-    transform: rotate(10deg);
-    pointer-events: none;
-    }
+            position: absolute;
+            top: 20%;
+            bottom: -20%;
+            left: -30%;
+            right: -30%;
+            transform: rotate(10deg);
+            pointer-events: none;
+        }
 
-    .iso-band {
-    position: absolute;
-    left: 0; right: 0;
-    }
-        
+        .iso-band {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
          .day2 {
             min-height: 100vh;
             display: flex;
@@ -522,6 +525,97 @@
             z-index: 4;
         }
 
+        .scene5 {
+            padding-top: 5vh;
+        }
+
+        .partyglow  p {
+            margin-top: -10vh;
+        }
+        
+        .partyglow .scene-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .sandonly {
+            background-color: #e8d5a3;
+        }
+
+        .block-brown {
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            width: 24vw;
+            height: 100vh;
+            background-color: #8b6f52;
+        }
+
+        .block-grey {
+            position: absolute;
+            bottom: 0vh;
+            left: 24%;
+            width: 48vw;
+            height: 75vh;
+            background-color: #6e6e6e;
+        }
+
+        .block-red {
+            position: absolute;
+            bottom: 0;
+            left: 72.25%;
+            width: 30vw;
+            height: 82.5vh;
+            background-color: #9e3b2e;
+        }
+
+        .store-sign {
+            position: absolute;
+            top: 23%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 30px;
+            border-radius: 6px;
+            font-size: clamp(1.5rem, 2vw, 2.5rem);
+            z-index: 5;
+        }
+
+        .sidewalk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45vw;
+            height: 90vh;
+            background-color: #b8b0a0;
+            clip-path: polygon(45% 0, 55% 0, 100% 100%, 0 100%);
+        }
+
+        .road-side {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50vw;
+            height: 90vh;
+            background-color: #4a4a4a;
+        }
+
+        .sand-side {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100vw;
+            height: 90vh;
+            background-color: #e8d5a3;
+        }
+
+        .scene3 .scene-content {
+            position: relative;
+            z-index: 10;
+        }
+
     </style>
 </head>
 
@@ -564,17 +658,17 @@
 
     <section class="scene">
         <div class="iso-stack">
-        <div class="iso-band" style="top:-30%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
-        <div class="iso-band" style="top:15%; height:40%; background-color: #e8d5ae;"></div>
-        <div class="iso-band" style="top:55%; height:10%; background-color: rgba(90, 80, 60, 0.6);"></div>
-        <div class="iso-band" style="top:65%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
-        <div class="iso-band" style="top:90%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
+            <div class="iso-band" style="top:-30%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
+            <div class="iso-band" style="top:15%; height:40%; background-color: #e8d5ae;"></div>
+            <div class="iso-band" style="top:55%; height:10%; background-color: rgba(90, 80, 60, 0.6);"></div>
+            <div class="iso-band" style="top:65%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
+            <div class="iso-band" style="top:90%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
         </div>
         <div class="scene-label">Scene 2</div>
         <div class="scene-content">   
-        <div class="isocube"></div>
-        <div class="isoroof2"></div>
-        <div class="isoroof"></div>
+            <div class="isocube"></div>
+            <div class="isoroof2"></div>
+            <div class="isoroof"></div>
             <h1>Runners</h1>
             <div class="paired">
                 <p>Bird thought to himself, looking out at the beach</p>
@@ -583,14 +677,26 @@
         </div>
     </section>
 
-    <section class="scene">
+    <section class="scene day2">
+        <div class="building"></div>
+        <div class="bird-window"></div>
+        <div class="roof"></div>
+        <div class="sun2"></div>
+        <div class="palm">
+            <div class="trunk"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-75deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-40deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-12deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(12deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(45deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(78deg);"></div>
+        </div>
         <div class="scene-label">Scene 3</div>
         <div class="scene-content">
-            <h1>Improving</h1>
-        <div class="paired">
-        <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
-        <p class="right-text"><strong>"I'll be popular like them"<br>"Happy"</strong></p>
-        </div>
+            <h1>Improving</h1>                
+            <p class="right-text">Bird thought to himself. <br><strong>"maybe I should take up running."</strong>
+                <br><br><br><strong>"I'll be popular like them"<br>"Happy"</strong></p>
+            </div>
         </div>
     </section>
 
@@ -605,28 +711,40 @@
         </div>
     </section>
 
-    <section class="scene">
+    <section class="scene day scene5">
+        <div class="sun"></div>
+        <div class="fish">
+            <div class="fish-body"></div>
+            <div class="fish-tail"></div>
+            <div class="fish-eye"></div>
+        </div>
         <div class="scene-label">Scene 5</div>
         <div class="scene-content">
             <h1>Run</h1>
             <div class="paired">
-                <p>Bird ran every morning, and at first.<br><br>It wasn't easy</p>
+                <p>Bird ran every morning, and at first.<br> <br> <br>It wasn't easy</p>
                 <p class="right-text"><strong>"gosh this is hard"</strong></p>
             </div>
         </div>
     </section>
 
     <section class="scene">
+        <div class="iso-stack">
+            <div class="iso-band" style="top:-15%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
+            <div class="iso-band" style="top:30%; height:40%; background-color: #e8d5ae;"></div>
+            <div class="iso-band" style="top:70%; height:10%; background-color: rgba(90, 80, 60, 0.6);"></div>
+            <div class="iso-band" style="top:80%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
+            <div class="iso-band" style="top:105%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
+        </div>
         <div class="scene-label">Scene 6</div>
         <div class="scene-content">
-                <h1>New Friend</h1>
+            <h1>New Friend</h1>
             <div class="paired">
                 <p>Bird met Parot, he also ran on the beach every morning<br><strong><em>Should I say Hi?</em></strong></p>
                 <p class="right-text"><strong><span style="color: #ff6565;"><br>"Hey, I see you run every morning"<br>"What's your name?"</span></strong></p>
             </div>
         </div>
     </section>
-    
 
     <section class="scene">
         <div class="scene-label">Scene 7</div>
@@ -651,7 +769,7 @@
     </section>
     
     <section class="scene storm">
-        <div class="scene-label">Scene 8a</div>
+        <div class="scene-label">Scene A</div>
         <div class="scene-content">
                 </span><h1><span style="color: #ffffff;">Storm</span></h1>
             <div class="paired">
@@ -662,9 +780,13 @@
     </section>
     
     <section class="scene">
-        <div class="scene-label">Scene 10</div>
+        <div class="store-sign">Store</div>
+        <div class="block-brown"></div>
+        <div class="block-grey"></div>
+        <div class="block-red"></div>
+        <div class="scene-label"> </div>
         <div class="scene-content">
-            <h1>New Look</h1>
+            <h1 style="margin-top: -10vh;"><h1>New Look</h1></h1>
             <div class="paired">
                 <p>Bird had been trying new things lately.<br>New colors. New styles.<br>Things that felt more like <em>them</em>.</p>
                 <p class="right-text"><strong><em>"That looks nice."</em></strong></p>
@@ -673,9 +795,12 @@
     </section>
 
     <section class="scene">
-        <div class="scene-label">Scene A</div>
+        <div class="sand-side"></div>
+        <div class="road-side"></div>
+        <div class="sidewalk"></div>
+        <div class="scene-label">Scene 9</div>
         <div class="scene-content">
-                <h1>There</h1>
+            <h1>There</h1>
             <div class="paired">
                 <p>Bird finally looked the part. She'd made it.<br>She waited to feel different.</p>
                 <p class="right-text"><strong><em>...huh</em></strong></p>
@@ -683,8 +808,8 @@
         </div>
     </section>
 
-    <section class="scene">
-        <div class="scene-label">Scene B</div>
+    <section class="scene sandonly">
+        <div class="scene-label">Scene 10</div>
         <div class="scene-content">
                 <h1>Morning Run</h1>
             <div class="paired">
@@ -694,16 +819,16 @@
         </div>
     </section>
 
-    <section class="scene partyglow">
-        <div class="fence"></div>
+   <section class="scene partyglow">
         <div class="fence-back"></div>
+        <div class="fence"></div>
         <div class="fence-block"></div>
         <div class="fence-glow"></div>
         <div class="scene-label">Scene 11</div>
         <div class="scene-content">
             <h1>Party</h1>
             <div class="paired">
-                <p>Parot invited Bird to a party<br><strong>"I dont know I dont really do parties."</strong></p>
+                <p style="margin-top: -10vh;">Parot invited Bird to a party<br><strong>"I dont know I dont really do parties."</strong></p>
                 <p class="right-text"><strong><span style="color: #ff6565;"><br>"My freinds hear about you all the time."<br>"they have been dying to meet you."</span></strong></p>
             </div>
         </div>
