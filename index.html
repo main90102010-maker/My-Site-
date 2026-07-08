@@ -84,7 +84,7 @@
         
         .scene-content {
             opacity: 0;
-            transition: opacity .5ms ease;
+            transition: opacity .5s ease;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -114,6 +114,8 @@
             margin-top: 10vh;
             align-items: flex-start;
         }
+
+        
 
         .scene-content h1,
         .scene-content p,
@@ -305,7 +307,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 30vh;
+            height: 40vh;
             background-color: #1aacd9;
         }
 
@@ -329,23 +331,6 @@
             box-shadow: 0 0 40px 15px rgba(245, 243, 206, 0.4);
         }
 
-        .darkroom {
-            background: linear-gradient(to bottom,
-                #2a2a35 0%,
-                #1c1c26 60%,
-                #12121a 100%);
-        }
-
-        .door {
-            position: absolute;
-            bottom: 0;
-            right: 18%;
-            width: 14vw;
-            height: 70vh;
-            background: linear-gradient(to bottom, #fffbe8 0%, #fff3c4 100%);
-            border-radius: 6px 6px 0 0;
-            box-shadow: 0 0 80px 30px rgba(255, 248, 220, 0.35);
-        }
 
         .apartment {
             background: linear-gradient(to bottom,
@@ -431,6 +416,79 @@
             border-right: 2vw solid #e8834a;
         }
 
+        .fish2 {
+            position: absolute;
+            top: 9%;
+            right: 10%;
+            width: 6vw;
+            height: 3vh;
+            z-index: 20;
+        }
+
+        
+
+        .door {
+            position: absolute;
+            bottom: 40vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12vw;
+            height: 40vh;
+            background: linear-gradient(to bottom, #fffbe8 0%, #fff3c4 100%);
+            box-shadow: 0 0 60px 10px rgba(255, 248, 220, 0.4);
+            z-index: 6;
+        }
+
+        .hall-roof {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 15vh;
+            background-color: #3a2e22;
+        }
+
+        .hall-floor {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 30vh;
+            background-color: #3a2e22;
+        }
+
+        .hallway h1 {
+            margin-top: 12vh;
+        }
+        
+        .hallway .scene-label {
+            top: 12vh;
+        }
+
+        .hallway {
+            background-color: #2e2e2e;
+            padding: 0 40px;
+        }
+
+        .hallway h1,
+        .hallway p,
+        .hallway .right-text span {
+            color: #fdf6dd !important;
+        }
+
+        .picframe {
+            position: absolute;
+            top: 30%;
+            right: 12%;
+            width: 7vw;
+            height: 14vh;
+            background-color: #2a2016;
+            border: 6px solid #5a4a38;
+            z-index: 5;
+        }
+
     </style>
 </head>
 
@@ -449,7 +507,7 @@
         </div>
     </section>
 
-    <section class="scene day2">
+    <section class="scene day">
         <div class="scene-content">
             <div class="building"></div>
             <div class="bird-window"></div>
@@ -472,6 +530,11 @@
     </section>
 
     <section class="scene">
+        <div class="fish2">
+            <div class="fish-body"></div>
+            <div class="fish-tail"></div>
+            <div class="fish-eye"></div>
+        </div>
         <div class="iso-stack">
         <div class="iso-band" style="top:-30%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
         <div class="iso-band" style="top:15%; height:40%; background-color: #e8d5ae;"></div>
@@ -495,9 +558,12 @@
     <section class="scene">
         <div class="scene-label">Scene 3</div>
         <div class="scene-content">
-            <h1>Improving</h1>
-        <div class="paired">
-        <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
+            <div class="building"></div>
+            <div class="bird-window"></div>
+            <div class="roof"></div>
+            <div class="sun2"></div>
+            <h1>Plan</h1>
+        <p class="right-text">Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
         <p class="right-text"><strong>"I'll be popular like them"<br>"Happy"</strong></p>
         </div>
         </div>
@@ -560,9 +626,9 @@
     </section>
     
     <section class="scene storm">
-        <div class="scene-label">Scene 8a</div>
+        <div class="scene-label">Scene A</div>
         <div class="scene-content">
-                </span><h1><span style="color: #ffffff;">Storm</span></h1>
+                <h1><span style="color: #ffffff;">Storm</span></h1>
             <div class="paired">
                 <p><span style="color: #ffffff;">Bird still had class and bills to pay so he had to go out anyway</span></p>
                 <p class="right-text"><strong><em><span style="color: #ffffff;">"Could it be anymore windy"</span></em></strong></p>
@@ -571,7 +637,7 @@
     </section>
     
     <section class="scene">
-        <div class="scene-label">Scene 10</div>
+        <div class="scene-label">Scene B</div>
         <div class="scene-content">
             <h1>New Look</h1>
             <div class="paired">
@@ -582,7 +648,7 @@
     </section>
 
     <section class="scene">
-        <div class="scene-label">Scene A</div>
+        <div class="scene-label">Scene 9</div>
         <div class="scene-content">
                 <h1>There</h1>
             <div class="paired">
@@ -593,7 +659,7 @@
     </section>
 
     <section class="scene">
-        <div class="scene-label">Scene B</div>
+        <div class="scene-label">Scene 10</div>
         <div class="scene-content">
                 <h1>Morning Run</h1>
             <div class="paired">
@@ -624,14 +690,17 @@
         </div>
     </section>
 
-    <section class="scene">
+   <section class="scene hallway">
         <div class="scene-label">Scene 13</div>
-            <div class="scene-content">
-                
-                <h1>Bird and friends</h1>
-                <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
-                <p class="right-text"><strong><span style="color: #000000;">She found her own happiness</span></strong></p>
-            </div>
+        <div class="scene-content">
+            <div class="hall-roof"></div>
+            <div class="hall-floor"></div>
+            <div class="door"></div>
+            <div class="picframe"></div>
+            <h1>Bird and friends</h1>
+            <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
+            <p class="right-text"><strong><span style="color: #f5f3ce;">She found her own happiness</span></strong></p>
+        </div>
     </section>
 
     <section class="scene eplog finbeach">
@@ -640,12 +709,6 @@
             <div class="eplog-left">
                 <h1 class="fin-title">〜EL FIN〜</h1>
                 <p>Thanks for scrolling.<br><strong>— Kevin</strong></p>
-                <div class="campframe">
-                    <span>[ campfire ]</span>
-                </div>
-            </div>
-            <div class="polframe">
-                <span> polaroids </span>
             </div>
         </div>
     </section>
