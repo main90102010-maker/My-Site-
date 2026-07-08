@@ -84,7 +84,7 @@
         
         .scene-content {
             opacity: 0;
-            transition: opacity .5s ease;
+            transition: opacity .5ms ease;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -114,8 +114,6 @@
             margin-top: 10vh;
             align-items: flex-start;
         }
-
-        
 
         .scene-content h1,
         .scene-content p,
@@ -173,7 +171,7 @@
             top: 30%;
             right: 60%;
             width: 50vw;
-            height: 100vw;   /* ← the only knob now. was 63vw */
+            height: 80vw;   /* ← the only knob now. was 63vw */
             background-color: #8b6f52;
             clip-path: polygon(
             50% 0,
@@ -181,8 +179,8 @@
             100% calc(100% - 15.75vw),
             50% 100%,
             0 calc(100% - 15.75vw),
-            0 15.75vw);
-        }
+            0 15.75vw, );
+            }
 
         .isoroof2 {
             position: absolute;
@@ -291,26 +289,6 @@
             text-align: left;
         }
 
-        .campframe {
-            width: 100%;
-            height: 13vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: 3px dashed #ffffff;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .polframe {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 40vh;
-            background-color: #1aacd9;
-        }
-
         .finbeach {
             background: linear-gradient(to bottom, 
                 #12121a 0%,
@@ -331,6 +309,23 @@
             box-shadow: 0 0 40px 15px rgba(245, 243, 206, 0.4);
         }
 
+        .darkroom {
+            background: linear-gradient(to bottom,
+                #2a2a35 0%,
+                #1c1c26 60%,
+                #12121a 100%);
+        }
+
+        .door {
+            position: absolute;
+            bottom: 0;
+            right: 18%;
+            width: 14vw;
+            height: 70vh;
+            background: linear-gradient(to bottom, #fffbe8 0%, #fff3c4 100%);
+            border-radius: 6px 6px 0 0;
+            box-shadow: 0 0 80px 30px rgba(255, 248, 220, 0.35);
+        }
 
         .apartment {
             background: linear-gradient(to bottom,
@@ -416,20 +411,25 @@
             border-right: 2vw solid #e8834a;
         }
 
-        .fish2 {
-            position: absolute;
-            top: 9%;
-            right: 10%;
-            width: 6vw;
-            height: 3vh;
-            z-index: 20;
+        .hallway {
+            background-color: #2e2e2e;
+            padding: 0 40px;
         }
 
+        .hall-floor {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 20vh;
+            background-color: #3a2e22;
+            
+        }
         
-
         .door {
             position: absolute;
-            bottom: 40vh;
+            bottom: 20vh;
             left: 50%;
             transform: translateX(-50%);
             width: 12vw;
@@ -445,48 +445,81 @@
             left: 50%;
             transform: translateX(-50%);
             width: 100vw;
-            height: 15vh;
+            height: 20vh;
             background-color: #3a2e22;
-        }
-
-        .hall-floor {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 30vh;
-            background-color: #3a2e22;
-        }
-
-        .hallway h1 {
-            margin-top: 12vh;
-        }
-        
-        .hallway .scene-label {
-            top: 12vh;
-        }
-
-        .hallway {
-            background-color: #2e2e2e;
-            padding: 0 40px;
         }
 
         .hallway h1,
         .hallway p,
-        .hallway .right-text span {
+        .hallway .right-text span,
+        .eplog h1,
+        .eplog p {
             color: #fdf6dd !important;
         }
 
-        .picframe {
+        .partyglow h1,
+        .partyglow p,
+        .partyglow .right-text span {
+            color: #fdf6dd;
+            text-shadow: 0 0 12px rgba(255, 240, 200, 0.9), 0 0 24px rgba(255, 220, 150, 0.6);
+            bottom: 50px;
+        }
+
+        .backround13 {
+            background: linear-gradient(to bottom,
+                #1a2340 0%,
+                #2b3a67 60%,
+                #3a4560 100%);
+        }
+
+        .partyglow {
+            background:
+                radial-gradient(ellipse at bottom left, rgba(255, 220, 130, 0.7) 0%, rgba(217, 169, 78, 0.3) 35%, rgba(26, 35, 64, 0) 65%),
+                linear-gradient(to bottom, #1a2340 0%, #2b3a67 60%, #3a4560 100%);
+        }
+
+        .fence-glow {
             position: absolute;
-            top: 30%;
-            right: 12%;
-            width: 7vw;
-            height: 14vh;
-            background-color: #2a2016;
-            border: 6px solid #5a4a38;
-            z-index: 5;
+            bottom: 0;
+            left: 50vw;
+            width: 25vw;
+            height: 50vh;
+            background: linear-gradient(to right, rgba(255, 220, 130, 0.45), rgba(255, 220, 130, 0));
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        .fence {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50vw;
+            height: 50vh;
+            background:
+                repeating-linear-gradient(45deg, transparent 0 10px, #3a2e22 16px 20px),
+                repeating-linear-gradient(-45deg, transparent 0 10px, #3a2e22 16px 20px);
+            z-index: 6;
+        }
+
+        .fence-block {
+            position: absolute;
+            bottom: 50vh;
+            left: 0;
+            width: 53vw;
+            height: 10vh;
+            background-color: #3a2e22;
+            z-index: 4;
+        }
+
+        .fence-back {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50vw;
+            height: 50vh;
+            background: linear-gradient(to bottom, #fffbe8 0%, #fff3c4 100%);
+            box-shadow: 0 0 60px 10px rgba(255, 248, 220, 0.4);
+            z-index: 4;
         }
 
     </style>
@@ -507,7 +540,7 @@
         </div>
     </section>
 
-    <section class="scene day">
+    <section class="scene day2">
         <div class="scene-content">
             <div class="building"></div>
             <div class="bird-window"></div>
@@ -530,11 +563,6 @@
     </section>
 
     <section class="scene">
-        <div class="fish2">
-            <div class="fish-body"></div>
-            <div class="fish-tail"></div>
-            <div class="fish-eye"></div>
-        </div>
         <div class="iso-stack">
         <div class="iso-band" style="top:-30%; height:45%; background-color: rgba(61, 155, 196, 0.7);"></div>
         <div class="iso-band" style="top:15%; height:40%; background-color: #e8d5ae;"></div>
@@ -558,12 +586,9 @@
     <section class="scene">
         <div class="scene-label">Scene 3</div>
         <div class="scene-content">
-            <div class="building"></div>
-            <div class="bird-window"></div>
-            <div class="roof"></div>
-            <div class="sun2"></div>
-            <h1>Plan</h1>
-        <p class="right-text">Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
+            <h1>Improving</h1>
+        <div class="paired">
+        <p>Bird thought to himself. <br><strong>"maybe I should take up running."</strong></p>
         <p class="right-text"><strong>"I'll be popular like them"<br>"Happy"</strong></p>
         </div>
         </div>
@@ -626,9 +651,9 @@
     </section>
     
     <section class="scene storm">
-        <div class="scene-label">Scene A</div>
+        <div class="scene-label">Scene 8a</div>
         <div class="scene-content">
-                <h1><span style="color: #ffffff;">Storm</span></h1>
+                </span><h1><span style="color: #ffffff;">Storm</span></h1>
             <div class="paired">
                 <p><span style="color: #ffffff;">Bird still had class and bills to pay so he had to go out anyway</span></p>
                 <p class="right-text"><strong><em><span style="color: #ffffff;">"Could it be anymore windy"</span></em></strong></p>
@@ -637,7 +662,7 @@
     </section>
     
     <section class="scene">
-        <div class="scene-label">Scene B</div>
+        <div class="scene-label">Scene 10</div>
         <div class="scene-content">
             <h1>New Look</h1>
             <div class="paired">
@@ -648,7 +673,7 @@
     </section>
 
     <section class="scene">
-        <div class="scene-label">Scene 9</div>
+        <div class="scene-label">Scene A</div>
         <div class="scene-content">
                 <h1>There</h1>
             <div class="paired">
@@ -659,7 +684,7 @@
     </section>
 
     <section class="scene">
-        <div class="scene-label">Scene 10</div>
+        <div class="scene-label">Scene B</div>
         <div class="scene-content">
                 <h1>Morning Run</h1>
             <div class="paired">
@@ -669,10 +694,14 @@
         </div>
     </section>
 
-    <section class="scene">
+    <section class="scene partyglow">
+        <div class="fence"></div>
+        <div class="fence-back"></div>
+        <div class="fence-block"></div>
+        <div class="fence-glow"></div>
         <div class="scene-label">Scene 11</div>
-            <div class="scene-content">
-                <h1>Party</h1>
+        <div class="scene-content">
+            <h1>Party</h1>
             <div class="paired">
                 <p>Parot invited Bird to a party<br><strong>"I dont know I dont really do parties."</strong></p>
                 <p class="right-text"><strong><span style="color: #ff6565;"><br>"My freinds hear about you all the time."<br>"they have been dying to meet you."</span></strong></p>
@@ -680,26 +709,29 @@
         </div>
     </section>
 
-    <section class="scene">
+    <section class="scene partyglow">
+        <div class="fence"></div>
+        <div class="fence-back"></div>
+        <div class="fence-block"></div>
+        <div class="fence-glow"></div>
         <div class="scene-label">Scene 12</div>
-            <div class="scene-content">
-                <h1>More Friends</h1>
-            <div class="paired">
-                <p>Bird's got some new freinds, it was nice.</p>
-            </div>
+        <div class="mun"></div>
+        <div class="scene-content">
+            <h1>More Friends</h1>
+            <p class="right-text">Bird's got some new freinds, it was nice.</p>
         </div>
     </section>
 
-   <section class="scene hallway">
-        <div class="scene-label">Scene 13</div>
-        <div class="scene-content">
-            <div class="hall-roof"></div>
-            <div class="hall-floor"></div>
-            <div class="door"></div>
-            <div class="picframe"></div>
+    <section class="scene hallway">
+        <div class="hall-floor"></div>
+        <div class="hall-roof"></div>
+        <div class="door"></div>
+        <div class="scene-content">    
+            <div class="scene-label">Scene 13</div>
+            
             <h1>Bird and friends</h1>
             <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
-            <p class="right-text"><strong><span style="color: #f5f3ce;">She found her own happiness</span></strong></p>
+            <p class="right-text"><strong>She found her own happiness</strong></p>
         </div>
     </section>
 
