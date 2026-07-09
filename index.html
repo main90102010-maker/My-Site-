@@ -148,6 +148,7 @@
             width: 25vw;
             height: 50vh;
             background-color: #000000;
+            overflow: hidden;
         }
 
         .day {
@@ -460,6 +461,24 @@
             color: #fdf6dd !important;
         }
 
+        .eplog p {
+            align-self: flex-start;
+            margin-left: 0;
+            margin-bottom: 1.5rem;
+            text-align: left;
+            max-width: 100%;
+        }
+
+        .eplog-left {
+            position: absolute;
+            bottom: 9%;
+            left: 10%;
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         .partyglow h1,
         .partyglow p,
         .partyglow .right-text span {
@@ -616,6 +635,108 @@
             z-index: 10;
         }
 
+        .greybg {
+            background-color: #101120;
+        }
+
+        .intro-img {
+            position: absolute;
+            bottom: 15%;
+            right: 10%;
+            transform: translateX(-50%);
+            width: 18vw;
+            z-index: 8;
+        }
+
+        .window-bird {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+        }
+
+        .bird-pic {
+            position: absolute;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20vw;
+            z-index: 8;
+        }
+
+
+
+        .eplog-bird {
+            position: absolute;
+            bottom: -15%;
+            right: 15%;
+            width: 40vw;
+            z-index: 8;
+            
+        }
+
+        .sidewalk-ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20vh;
+            background-color: #9a9a9a;
+        }
+
+        .cloud-pic {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 12vw;
+            z-index: 7;
+        }
+
+        .window-eyes {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+        }
+
+        .fire-rocks {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            width: 12vw;
+            z-index: 9;
+        }
+
+        .fire-flame {
+            position: absolute;
+            bottom: 10%;
+            right: 0%;
+            width: 80vw;
+            z-index: 8;
+            transform-origin: bottom center;
+            animation: flicker 1.2s ease-in-out infinite;
+        }
+        .fire-flame {
+            position: absolute;
+            bottom: 6%;
+            right: 8%;
+            width: 26vw;
+            z-index: 8;
+            transform-origin: bottom center;
+            animation: flicker 1.2s ease-in-out infinite;
+            filter: drop-shadow(0 0 200px rgba(255, 150, 50, 0.9));
+        }
+
+        @keyframes flicker {
+            0%   { transform: scaleY(1) scaleX(1); opacity: 0.9; }
+            25%  { transform: scaleY(1.05) scaleX(0.98); opacity: 1; }
+            50%  { transform: scaleY(0.98) scaleX(1.02); opacity: 0.9; }
+            75%  { transform: scaleY(1.04) scaleX(0.99); opacity: 1; }
+            100% { transform: scaleY(1) scaleX(1); opacity: 0.9; }
+        }
+
     </style>
 </head>
 
@@ -628,6 +749,7 @@
             <div class="fish-eye"></div>
         </div>
         <div class="sun"></div>
+        <img src="images/05.png" class="intro-img">
         <div class="scene-content">
             <h1>Birds Story</h1>
             <p>Short bird story - Kevin </p>
@@ -635,24 +757,25 @@
     </section>
 
     <section class="scene day2">
+        <div class="building"></div>
+        <div class="bird-window">
+            <img src="images/eyes.png" class="window-eyes">
+        </div>
+        <div class="roof"></div>
+        <div class="sun2"></div>
+        <div class="palm">
+            <div class="trunk"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-75deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-40deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(-12deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(12deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(45deg);"></div>
+            <div class="frond" style="transform: translateX(-50%) rotate(78deg);"></div>
+        </div>
         <div class="scene-content">
-            <div class="building"></div>
-            <div class="bird-window"></div>
-            <div class="roof"></div>
-            <div class="sun2"></div>
-            <div class="palm">
-                <div class="trunk"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(-75deg);"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(-40deg);"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(-12deg);"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(12deg);"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(45deg);"></div>
-                <div class="frond" style="transform: translateX(-50%) rotate(78deg);"></div>
-            </div>
             <div class="scene-label">Scene 1</div>
             <h1>Bird and Himself</h1>
-            <p style="margin-left: 70%; margin-bottom: 20%;">Bird was once sitting by his lonsome one day, wondering to himself. 
-                           <br> <strong>Was he missing something?</strong></p>
+            <p style="margin-left: 70%;">Bird was once sitting by his lonsome one day, wondering to himself. <br> <strong>Was he missing something?</strong></p>
         </div>
     </section>
 
@@ -664,6 +787,7 @@
             <div class="iso-band" style="top:65%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
             <div class="iso-band" style="top:90%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
         </div>
+        <img src="images/2.png" class="bird-pic" style="left: 55%; bottom: 20%;">
         <div class="scene-label">Scene 2</div>
         <div class="scene-content">   
             <div class="isocube"></div>
@@ -676,6 +800,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="scene day2">
         <div class="building"></div>
@@ -691,38 +816,40 @@
             <div class="frond" style="transform: translateX(-50%) rotate(45deg);"></div>
             <div class="frond" style="transform: translateX(-50%) rotate(78deg);"></div>
         </div>
+        <img src="images/322.png" class="bird-pic" style="left: 15%; z-index: 10;">
         <div class="scene-label">Scene 3</div>
         <div class="scene-content">
             <h1>Improving</h1>                
             <p class="right-text">Bird thought to himself. <br><strong>"maybe I should take up running."</strong>
                 <br><br><br><strong>"I'll be popular like them"<br>"Happy"</strong></p>
+        </div>
+    </section>
+
+    <section class="scene">
+        <img src="images/4.png" class="bird-pic">
+        <div class="scene-label">Scene 4</div>
+        <div class="scene-content">
+            <h1>Roadblock</h1>
+            <div class="paired">
+                <p>And so bird went on a journey of varying degrees of success</p>
+                <p class="right-text"><strong>"I'll be happy!"</strong></p>
             </div>
         </div>
     </section>
 
-    <section class="scene"> 
-        <div class="scene-label">Scene 4</div>
-        <div class="scene-content">
-            <h1>Roadblock</h1>
-        <div class="paired">
-            <p>And so bird went on a journey of varying degrees of success</p>
-            <p class="right-text"><strong>"I'll be happy!"</strong></p>
-        </div>
-        </div>
-    </section>
-
-    <section class="scene day scene5">
+    <section class="scene day">
         <div class="sun"></div>
         <div class="fish">
             <div class="fish-body"></div>
             <div class="fish-tail"></div>
             <div class="fish-eye"></div>
         </div>
+        <img src="images/05.png" class="bird-pic">
         <div class="scene-label">Scene 5</div>
         <div class="scene-content">
             <h1>Run</h1>
             <div class="paired">
-                <p>Bird ran every morning, and at first.<br> <br> <br>It wasn't easy</p>
+                <p>Bird ran every morning, and at first.<br><br>It wasn't easy</p>
                 <p class="right-text"><strong>"gosh this is hard"</strong></p>
             </div>
         </div>
@@ -736,6 +863,7 @@
             <div class="iso-band" style="top:80%; height:25%; background-color: rgba(120, 112, 95, 0.6);"></div>
             <div class="iso-band" style="top:105%; height:40%; background-color: rgba(90, 80, 60, 0.6);"></div>
         </div>
+        <img src="images/6.png" class="bird-pic">
         <div class="scene-label">Scene 6</div>
         <div class="scene-content">
             <h1>New Friend</h1>
@@ -746,21 +874,16 @@
         </div>
     </section>
 
-    <section class="scene">
-        <div class="scene-label">Scene 7</div>
-        <div class="scene-content">
-                <h1>Morning</h1>
-            <div class="paired">
-                <p><em>Man I really do not want to get up</em><br><strong><em>But I Cant leave him hanging</em></strong></p>
-                <p class="right-text"><strong><span style="color: #000000;"><br>"No! I have to get up."<br></span></strong></p>
-            </div>
-        </div>
-    </section>
-
     <section class="scene storm">
+        <div class="building"></div>
+        <div class="bird-window"></div>
+        <div class="roof"></div>
+        <div class="rain"></div>
+        <img src="images/cloud.png" class="cloud-pic">
+        <img src="images/8.png" class="bird-pic" style="left: 10%; bottom: 10%;">
         <div class="scene-label">Scene 8</div>
         <div class="scene-content">
-                 <h1><span style="color: #ffffff;">Thunder</span></h1>
+            <h1><span style="color: #ffffff;">Thunder</span></h1>
             <div class="paired">
                 <p><span style="color: #ffffff;">It started to storm, and Bird had to stay inside</span></p>
                 <p class="right-text"><strong><span style="color: #ffffff;"><br>"Bruh."</span></strong></p>
@@ -769,9 +892,12 @@
     </section>
     
     <section class="scene storm">
+        <div class="sidewalk-ground"></div>
+        <img src="images/cloud.png" class="cloud-pic">
+        <img src="images/8A.png" class="bird-pic">
         <div class="scene-label">Scene A</div>
         <div class="scene-content">
-                </span><h1><span style="color: #ffffff;">Storm</span></h1>
+            <h1><span style="color: #ffffff;">Storm</span></h1>
             <div class="paired">
                 <p><span style="color: #ffffff;">Bird still had class and bills to pay so he had to go out anyway</span></p>
                 <p class="right-text"><strong><em><span style="color: #ffffff;">"Could it be anymore windy"</span></em></strong></p>
@@ -784,9 +910,10 @@
         <div class="block-brown"></div>
         <div class="block-grey"></div>
         <div class="block-red"></div>
+        <img src="images/8b.png" class="bird-pic" style="width: 30vw; bottom: 0;">
         <div class="scene-label"> </div>
         <div class="scene-content">
-            <h1 style="margin-top: -10vh;"><h1>New Look</h1></h1>
+            <h1 style="margin-top: -10vh;">New Look</h1>
             <div class="paired">
                 <p>Bird had been trying new things lately.<br>New colors. New styles.<br>Things that felt more like <em>them</em>.</p>
                 <p class="right-text"><strong><em>"That looks nice."</em></strong></p>
@@ -798,6 +925,7 @@
         <div class="sand-side"></div>
         <div class="road-side"></div>
         <div class="sidewalk"></div>
+        <img src="images/9.png" class="bird-pic">
         <div class="scene-label">Scene 9</div>
         <div class="scene-content">
             <h1>There</h1>
@@ -809,6 +937,7 @@
     </section>
 
     <section class="scene sandonly">
+        <img src="images/10.png" class="bird-pic">
         <div class="scene-label">Scene 10</div>
         <div class="scene-content">
                 <h1>Morning Run</h1>
@@ -824,6 +953,7 @@
         <div class="fence"></div>
         <div class="fence-block"></div>
         <div class="fence-glow"></div>
+        <img src="images/11.png" class="bird-pic" style="width: 30vw; bottom: -11%; left: 75%;">
         <div class="scene-label">Scene 11</div>
         <div class="scene-content">
             <h1>Party</h1>
@@ -835,10 +965,11 @@
     </section>
 
     <section class="scene partyglow">
-        <div class="fence"></div>
         <div class="fence-back"></div>
+        <div class="fence"></div>
         <div class="fence-block"></div>
         <div class="fence-glow"></div>
+        <img src="images/12.png" class="bird-pic" style="width: 30vw; bottom: -11%; left: 75%;">
         <div class="scene-label">Scene 12</div>
         <div class="mun"></div>
         <div class="scene-content">
@@ -851,9 +982,9 @@
         <div class="hall-floor"></div>
         <div class="hall-roof"></div>
         <div class="door"></div>
+        <img src="images/13.png" class="bird-pic">
         <div class="scene-content">    
             <div class="scene-label">Scene 13</div>
-            
             <h1>Bird and friends</h1>
             <p>Bird didint have the best car or the best girls<br><strong>But she did'nt need all that.</strong></p>
             <p class="right-text"><strong>She found her own happiness</strong></p>
@@ -863,14 +994,16 @@
     <section class="scene eplog finbeach">
         <div class="scene-content">
             <div class="mun"></div>
+            <img src="images/14.png" class="eplog-bird">
+            <img src="images/fire 1.png" class="fire-flame" style="width: 80vw; right: -25%; bottom: -36%;">
+            <img src="images/rocks.png" class="fire-rocks">
             <div class="eplog-left">
                 <h1 class="fin-title">〜EL FIN〜</h1>
-                <p>Thanks for scrolling.<br><strong>— Kevin</strong></p>
+                <p>Thanks for scrolling.<br> This was my first ever project that i have EVER shipped. i learned how to code while making this , so im pretty proud. This was super fun and this is even my own Font! Thanks to my Awsome Kat for help with the visuals and letitng me vison come true <3 <strong>— Kevin</strong></p>
             </div>
         </div>
     </section>
     
-
     <script>
         const scenes = document.querySelectorAll('.scene');
 
